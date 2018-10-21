@@ -9,6 +9,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="muledemoFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/demo" doc:name="HTTP"/>
-        <set-payload value="#['Hello Aswin']" doc:name="Set Payload"/>
+        <set-payload value="#['Hello Aswin']" doc:name="SetPayload1"/>
+        <logger message="Please log the result" level="INFO" doc:name="Logger"/>
+        <set-payload value="#['test the payload']" doc:name="SetPayload2"/>
     </flow>
 </mule>
